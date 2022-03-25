@@ -1,0 +1,1 @@
+[Fri Mar 25 07:05:29.820347 2022] [core:alert] [pid 1384] [client 127.0.0.1:35956] /var/www/html/cohenslaw/.htaccess: Invalid command 'Header', perhaps misspelled or defined by a module not included in the server configuration
