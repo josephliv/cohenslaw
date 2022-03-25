@@ -1,0 +1,18 @@
+{
+    "sourceFile": "notes.txt",
+    "activeCommit": 0,
+    "commits": [
+        {
+            "activePatchIndex": 0,
+            "patches": [
+                {
+                    "date": 1648211003180,
+                    "content": "Index: \n===================================================================\n--- \n+++ \n"
+                }
+            ],
+            "date": 1648211003180,
+            "name": "Commit-0",
+            "content": "cohenslaw.test \nuser: livengood78\npass: ZcF6lZ*%7zum3wdyacNEszDj\n\nUPDATE wpiv_options SET option_value = replace(option_value, 'https://cohen.joes.business/', 'http://cohenslaw.test') WHERE option_name = 'home' OR option_name = 'https://cohen.joes.business/';\nThis command didn't change anything so I had to do it manually! \n\nUPDATE wpiv_posts SET post_content = replace(post_content, 'https://cohen.joes.business/', 'http://cohenslaw.test');\n\nUPDATE wpiv_postmeta SET meta_value = replace(meta_value,'https://cohen.joes.business/','http://cohenslaw.test');\n\nWeird that all these do not make any changes and when I search for the URLs they are not found. So again, looks like I'm dealing with a broken phpmyadmin. \n\nWhen I visit cohenslaw.test it just redirects me to the main website indicating that nothing was changed in the DB. \n\nLogged into wp-admin and updated the permalinks and when to elementor > tools > replaced URL, said that over 600 interies where changed but got errors in the log saying permission was denied for /wp-content/plugins/elementor/core/files/manager.php \nSo I set the permissions by running the following commend.. \n\nchmod -R 775 wp-content/plugins/elementor/core/files/manager.php\n\nSo I reran the quiry through elementor and it came back as 0, so I guess it all good, no errors. \n\nStill getting permission denied when doing anything with elementor... \nran same comand but in all folders.. \n**************************** NEXT GOAL ******************\n\nSet up SSH and SFTP with namecheap to upload any changed files! \nctr shift p to get the config and below are the items needed... \nNameCheap - main server password FHJ!9x46WM96!32w \nUsed the sftp explorer extention and set it up as the following \n{\n    \"name\": \"cohenslaw\",\n    \"host\": \"192.64.117.114\",\n    \"protocol\": \"sftp\",\n    \"port\": 21098,\n    \"username\": \"joessjhv\",\n    \"remotePath\": \"cohen.joes.business\",\n    \"uploadOnSave\": true\n}\n"
+        }
+    ]
+}
